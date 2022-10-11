@@ -102,9 +102,26 @@ svg {
 }
 
 body {
-  min-height: 100vh;
   display: grid;
   place-content: center;
-  font-family: Outfit, sans-serif;
-  background-color: hsl(217, 54%, 11%);
+}
+
+.container {  
+  --max-width: 1440px;
+  --padding: 1rem;
+
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  background-color: var(--cream);
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
 }
