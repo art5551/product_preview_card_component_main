@@ -1,5 +1,9 @@
 /* fonts supplied by the style guide */
 
+@font-face {
+  font-family: Montserrat;
+  src: url(https://fonts.google.com/specimen/Montserrat);
+}
 
 /* colors provided in the style guide */
 :root {
@@ -7,12 +11,19 @@
   --dark-grayish-blue: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
   --dark-cyan: hsl(158, 36%, 37%);
-  --button-hover: hsl(158, 31%, 59%);
   --cream: hsl(30, 38%, 92%);
 
   --font-family-accent: 'Fraunces', serif;
   --font-family-body: 'Montserrat', sans-serif;
 }
+
+@media (min-width: 50em) {
+  :root {
+    /* set the regular fonts in the main root and set them again here for mobile*/
+    --fs-400: 1rem;
+  }
+}
+
 
 /* Beginning of reset CSS with minor changes recommended by Kevin Powell */
 /* see youtube https://www.youtube.com/watch?v=h3bTwCqX4ns */
@@ -84,135 +95,64 @@ svg {
 /* End of reset CSS*/
 
 .attribution { 
-  font-size: 11px; 
-  text-align: center; 
+  font-size: 11px; text-align: center; 
 }
 .attribution a { 
   color: hsl(228, 45%, 44%); 
 }
 
+.container {  
+  --max-width: 1440px;
+  --padding: 1rem;
 
- /* setting the initial content attributes here */
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: min(var(--max-width), 100% - (var(--padding) * 2));
+  margin-inline: auto;
   background-color: var(--cream);
-}
-
-
-.card-content {
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  background: var(--white);
-  border-radius: 5px;
-  margin: 20px;
-}
-
-.card-content > * {
-  flex-basis: 50%;
-}
-
-picture {
-  overflow: hidden;
-}
-
-picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  justify-content: center;
 
 }
 
-.card-detail {
-  padding: 20px;
+.even-columns {
+  max-width: 200;
+  height: 700vh;
+  display: grid;
 }
 
-.product-type {
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.product-header {
+  color: var(--very-dark-blue);
   font-family: var(--font-family-body);
-  color: var(--dark-grayish-blue);
-  font-size: 12px;
-  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 22px;
   letter-spacing: 5px;
 }
 
 .product-title {
+  color: var(--very-dark-blue);
   font-family: var(--font-family-accent);
-  font-size: 32px;
   font-weight: 700;
-  line-height: 1.25;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  font-size: 24px;
 }
 
 .product-description {
+  color: var(--very-dark-blue);
   font-family: var(--font-family-body);
-  font-size: 14px;
   font-weight: 500;
-  color: var(--dark-grayish-blue);
-  margin-top: 20px;
-
 }
 
-.prices {
-  font-family: var(--font-family-accent);
-  font-size: 22px;
-  color: var(--dark-cyan);
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.old-price {
-  font-size: 12px;
-  text-decoration: line-through;
-}
-
-button {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  text-align: center;
-  color: var(--White);
-  padding: 14px 32px;
-  border-radius: 10px;
-  background: var(--dark-cyan);
-  transition: 0.7s ease;
-  cursor: pointer;
-}
-
-button:hover {
-  background: var(--button-hover);
-}
-
-button img {
-  width: 16px;
-}
-
-@media (min-width: 616px) {
-  .card-content {
-    flex-direction: row;
+/* @media only screen and (max-width: 400px) {
+  .card {
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
-
-  .card-detail {
-    padding: 30px;
-  }
-
-
-  .product-title {
-    margin-top: 17px;
-    margin-bottom: 12px;
-  }
-
-
-  .product-description {
-    margin-bottom: 22px;
-  }
-}
-
+} */

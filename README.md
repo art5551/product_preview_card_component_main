@@ -4,8 +4,8 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here]( https://github.com/art5551/product_preview_card_component_main.git/)
+- Live Site URL: [Add live site URL here]( https://art5551.github.io/product_preview_card_component_main/)
 
 ## My process
 
@@ -19,6 +19,7 @@ This is a solution to the [Product preview card component challenge on Frontend 
 
 ### What I learned
 
+Easier to code for mobile first
 Take the time to setup the colors, fonts, weights and sizes and assign them to variables in the root of the CSS.
 Use the following CSS to center content on screen when using flex.
 
