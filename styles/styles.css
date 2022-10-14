@@ -101,12 +101,12 @@ body {
 
 
 .card-content {
-  min-width: 620px;
-  max-width: 620px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   background: var(--white);
   border-radius: 5px;
+  margin: 20px;
 }
 
 .card-content > * {
